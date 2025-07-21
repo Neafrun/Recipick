@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipick</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="app-wrapper">
+
+    <!-- 상단 회사명 -->
+    <div class="company-name">주식회사 밥프렌즈</div>
+
+    <!-- 로그인 버튼 -->
+    <button id="loginMenu" class="menu-btn">
+      <i class="fas fa-user"></i> 로그인
+    </button>
+
+    <!-- 내 레시피 버튼 -->
+    <button id="myRecipeBtn" class="menu-btn my-recipe-btn" style="display:none">
+      <i class="fas fa-bookmark"></i> 내 레시피
+    </button>
+
+    <!-- 로고 -->
+    <div class="header">
+      <div class="logo">
+        <div class="logo-text">
+          <span style="--i:1" class="letter r-container">R<span class="chef-hat"><i class="fas fa-hat-chef"></i></span></span>
+          <span style="--i:2" class="letter">e</span>
+          <span style="--i:3" class="letter">c</span>
+          <span style="--i:4" class="letter highlight">!</span>
+          <span style="--i:5" class="letter tight-right">P</span>
+          <span style="--i:6" class="letter spoon-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" widthsz="100" height="100">
+              <g class="wiggle">
+                <ellipse cx="32" cy="20" rx="12" ry="14" fill="#e0e0e0"/>
+                <rect x="30" y="26" width="4" height="28" rx="2" fill="#e0e0e0"/>
+              </g>
+            </svg>
+          </span>
+          <span style="--i:7" class="letter tight-left">c</span>
+          <span style="--i:8" class="letter">k</span>
+        </div>
+        <div class="plate"></div>
+        <div class="food-decoration left"></div>
+        <div class="food-decoration right"></div>
+        <div class="steam steam-1"></div>
+        <div class="steam steam-2"></div>
+        <div class="steam steam-3"></div>
+        <div class="glow"></div>
+      </div>
+    </div>
+
+    <!-- 메인 콘텐츠 -->
+    <div class="container">
+      <div class="input-container">
+        <input type="text" id="ingredients" placeholder="재료 입력 (예: 달걀, 돼지고기)" />
+        <button class="search-button" id="recommendBtn">
+          <i class="fas fa-search"></i> 추천 받기
+        </button>
+      </div>
+
+      <!-- 추천 목록 -->
+      <div id="result" class="recipe-list"></div>
+
+      <!-- 레시피 상세 표시 영역 -->
+      <div id="recipeDetail"></div>
+
+      <!-- 유튜브 영상 영역 -->
+      <!-- <h2 class="section-title"><i class="fas fa-fire"></i> 관련 요리 영상</h2>-->
+      <div id="popularVideos" class="video-thumbnails"></div>
+      <h2 class="section-title" id="popularTitle"><i class="fas fa-star"></i> 인기 요리 추천</h2>
+      <div class="popular-carousel-wrapper" id="popularSection">
+        <div id="popularCarousel" class="popular-carousel"></div>
+      </div>
+        </div>
+    </div>
+  
+  <!-- 로그인 모달 -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+      <div class="tab-buttons">
+        <button id="loginTabBtn" class="active">로그인</button>
+        <button id="signupTabBtn">회원가입</button>
+      </div>
+      <div id="loginForm">
+        <div class="input-group"><input type="text" id="username" placeholder="아이디"><i class="fas fa-user"></i></div>
+        <div class="input-group"><input type="password" id="password" placeholder="비밀번호"><i class="fas fa-lock"></i></div>
+        <button class="action-btn" id="loginBtn">로그인</button>
+      </div>
+      <div id="signupForm" style="display:none;">
+        <div class="input-group"><input type="text" id="signupUsername" placeholder="아이디"><i class="fas fa-user"></i></div>
+        <div class="input-group"><input type="password" id="signupPassword" placeholder="비밀번호"><i class="fas fa-lock"></i></div>
+        <div class="input-group"><input type="password" id="signupPasswordConfirm" placeholder="비밀번호 확인"><i class="fas fa-lock"></i></div>
+        <button class="action-btn" id="signupBtn">회원가입</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 제작자 모달 -->
+  <div id="creatorModal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+      <h3>Recipick 개발팀</h3>
+      <p>냉장고 속 재료로 무엇을 만들지 고민될 때, Recipick이 도와드릴게요!</p>
+    </div>
+  </div>
+
+  <!-- 내 레시피 모달 -->
+  <div id="savedRecipeModal" class="modal">
+    <div class="modal-content saved-modal">
+      <button class="close-modal"><i class="fas fa-times"></i></button>
+      <h3><i class="fas fa-bookmark"></i> 내 레시피</h3>
+      <ul id="savedList"></ul>
+      <p id="noSaved" style="text-align:center;color:#888;margin-top:15px;">저장된 레시피가 없습니다.</p>
+    </div>
+  </div>
+
+  <!-- 로딩 스피너 -->
+  <div id="loading"><div class="spinner"></div></div>
+
+  <!-- 스크립트 -->
+  <script src="script.js"></script>
+</body>
+</html>
