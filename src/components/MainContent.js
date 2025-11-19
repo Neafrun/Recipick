@@ -459,9 +459,10 @@ function MainContentGemini({ currentUser, setLoading }) {
                     <iframe 
                       width="100%" 
                       height="200" 
-                      src={`https://www.youtube.com/embed/${video.id.videoId}`} 
+                      src={`https://www.youtube.com/embed/${video.id.videoId}?origin=${window.location.origin}&rel=0`} 
                       frameBorder="0" 
                       allowFullScreen
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       title={video.snippet.title}
                     ></iframe>
                     <p className="youtube-title">{video.snippet.title}</p>
