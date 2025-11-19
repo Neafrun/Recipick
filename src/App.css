@@ -1282,32 +1282,32 @@ input:focus {
   }
   
   .logo {
-    width: 220px;
-    height: 95px;
+    width: 240px;
+    height: 105px;
     max-width: calc(100vw - 30px);
   }
   
   .logo-text {
-    font-size: 38px;
+    font-size: 42px;
     letter-spacing: -1px;
   }
   
   .spoon-icon svg {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
   }
   
   .tight-right {
-    margin-right: -14px;
+    margin-right: -16px;
   }
   
   .tight-left {
-    margin-left: -14px;
+    margin-left: -16px;
   }
   
   .plate {
-    width: 190px;
-    height: 42px;
+    width: 210px;
+    height: 46px;
     max-width: calc(100vw - 30px);
   }
   
@@ -1434,32 +1434,32 @@ input:focus {
   }
   
   .logo {
-    width: 180px;
-    height: 80px;
+    width: 200px;
+    height: 90px;
     max-width: calc(100vw - 24px);
   }
   
   .logo-text {
-    font-size: 32px;
+    font-size: 36px;
     letter-spacing: -1px;
   }
   
   .spoon-icon svg {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
   }
   
   .tight-right {
-    margin-right: -12px;
+    margin-right: -14px;
   }
   
   .tight-left {
-    margin-left: -12px;
+    margin-left: -14px;
   }
   
   .plate {
-    width: 160px;
-    height: 38px;
+    width: 180px;
+    height: 42px;
     max-width: calc(100vw - 24px);
   }
   
