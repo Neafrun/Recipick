@@ -9,7 +9,11 @@
 
 **냉장고 속 재료로 무엇을 만들지 고민될 때, Recipick이 도와드립니다!**
 
-[🚀 데모 보기](#) | [📖 문서](#-주요-기능) | [🐛 버그 리포트](../../issues)
+[🚀 데모 보기](https://recipick-portfolio.vercel.app) | [📖 문서](#-주요-기능) | [🐛 버그 리포트](../../issues)
+
+## 🌐 배포 URL
+
+🔗 **https://recipick-portfolio.vercel.app**
 
 </div>
 
