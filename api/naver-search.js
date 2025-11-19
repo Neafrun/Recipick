@@ -23,14 +23,20 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Query parameter is required' });
   }
 
-  // 환경 변수 확인
-  const clientId = process.env.NAVER_CLIENT_ID;
-  const clientSecret = process.env.NAVER_CLIENT_SECRET;
+  // 환경 변수 확인 (REACT_APP_ 접두사 있거나 없거나 모두 지원)
+  const clientId = process.env.NAVER_CLIENT_ID || process.env.REACT_APP_NAVER_CLIENT_ID;
+  const clientSecret = process.env.NAVER_CLIENT_SECRET || process.env.REACT_APP_NAVER_CLIENT_SECRET;
 
   if (!clientId || !clientSecret) {
+    console.error('환경 변수 확인:', {
+      NAVER_CLIENT_ID: !!process.env.NAVER_CLIENT_ID,
+      REACT_APP_NAVER_CLIENT_ID: !!process.env.REACT_APP_NAVER_CLIENT_ID,
+      NAVER_CLIENT_SECRET: !!process.env.NAVER_CLIENT_SECRET,
+      REACT_APP_NAVER_CLIENT_SECRET: !!process.env.REACT_APP_NAVER_CLIENT_SECRET,
+    });
     return res.status(500).json({ 
       error: 'Naver API credentials not configured',
-      message: 'Please set NAVER_CLIENT_ID and NAVER_CLIENT_SECRET in Vercel environment variables'
+      message: 'Please set NAVER_CLIENT_ID and NAVER_CLIENT_SECRET (or REACT_APP_NAVER_CLIENT_ID and REACT_APP_NAVER_CLIENT_SECRET) in Vercel environment variables'
     });
   }
 
