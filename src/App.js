@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import './App.css';
 import Header from './components/Header';
 import LoginModal from './components/LoginModal';
@@ -77,6 +78,7 @@ function App() {
       )}
 
       <Loading show={loading} />
+      <Analytics />
     </div>
   );
 }
