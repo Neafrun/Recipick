@@ -363,7 +363,7 @@ AI가 답변을 작성하는 듯한 자연스러운 타이핑 효과로 사용�
 **Made with ❤️ by 밥프렌즈**
 
 더 많은 정보가 필요하신가요?
-- 📧 이메일: your-email@example.com
+- 📧 이메일: shjw5392@naver.com
 - 🐛 버그 리포트: [Issues](../../issues)
 - 💡 기능 제안: [Pull Requests](../../pulls)
 
