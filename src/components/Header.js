@@ -5,7 +5,7 @@ function Header({ currentUser, onLoginClick, onMyRecipeClick, onCompanyClick }) 
   return (
     <>
       <div className="company-name" onClick={onCompanyClick}>
-        주식회사 밥프렌즈
+        밥프렌즈
       </div>
 
       <button className="menu-btn" onClick={onLoginClick}>
