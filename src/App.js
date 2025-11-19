@@ -15,7 +15,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // 데모 계정 자동 생성
+    // 데모 계정 자동 생성 및 초기화
     const users = JSON.parse(localStorage.getItem('users') || '{}');
     if (!users['demo']) {
       users['demo'] = '1234';
