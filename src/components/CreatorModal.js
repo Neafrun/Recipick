@@ -49,7 +49,7 @@ function CreatorModal({ onClose }) {
           </div>
 
           <div className="project-info">
-            <p className="project-date">📅 2024년 개발</p>
+            <p className="project-date">📅 2025년 개발</p>
             <a href="https://github.com/Neafrun/Recipick" target="_blank" rel="noopener noreferrer" className="github-link">
               <i className="fab fa-github"></i> GitHub 저장소 보기
             </a>
