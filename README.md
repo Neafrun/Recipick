@@ -13,7 +13,7 @@
 
 ## 🌐 배포 URL
 
-🔗 **https://recipick-portfolio.vercel.app**
+🔗 **https://recipick-ljhproject.vercel.app/**
 
 </div>
 
